@@ -75,18 +75,12 @@ section{
             z-index: 1;
             bottom: 100%;
 
-            /* visibility: hidden; */
-
             font-size: 8vw;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             color: rgb(65, 126, 206);
             text-shadow: 5px 2px 6px rgb(0, 0, 0);
 
-            /* background-image: linear-gradient(to right,rgba(255, 255, 255, 0.349), rgba(175, 175, 175, 0.459), rgba(212, 212, 212, 0.473),rgba(163, 163, 163, 0.274),rgba(165, 165, 165, 0.329),rgba(223, 223, 223, 0.363)); */
             background-color: rgb(255, 255, 255);
-            /* background-position: top;
-            background-repeat: no-repeat;
-            background-size: 40%; */
             
             display:flex;
             flex-direction: column;
@@ -127,10 +121,9 @@ section{
                     width: 50%;
 
                     text-align: center;
-                    background-position:bottom;
+                    background-position:center;
                     background-repeat: no-repeat;
                     background-size: 60%;
-                    /* background-color: blueviolet; */
                 }
                 #left{
                     background-position:center;
@@ -156,7 +149,6 @@ footer{
         border-bottom-right-radius: 20px;
 
         background-color: rgb(212, 187, 154);
-        /* backdrop-filter: blur(1.9px); */
 
         display: flex;
         justify-content: space-evenly;}
@@ -171,10 +163,13 @@ footer{
 
             position: relative;
             bottom: -1vh;
+
+            text-align: center;
+            background-position:center;
+            background-repeat: no-repeat;
+            background-size: 60%;
             
-            background-image: linear-gradient(to right,rgba(194, 198, 206, 0.205), rgba(163, 168, 177, 0.185),rgba(207, 207, 207, 0.438));
             backdrop-filter: blur(3px);}
-            /* backdrop-filter: blur(4px);} */
             #sub {
                 z-index: -1;
                 position: relative;
@@ -183,3 +178,6 @@ footer{
                 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
                 font-size: 20px;
             }
+            #rock { background-image: url(rock.png);}
+            #paper { background-image: url(paper.png);}
+            #scissor { background-image: url(scissor.png);}
