@@ -4,8 +4,8 @@ let items = [
     [document.getElementById("scissor"),1,0,"url(scissor.png)"]]
 
 let targets = [
-    document.getElementById("front"),
-    document.getElementById("back")]
+    document.getElementById("score"),
+    document.getElementById("screen")]
 
 addEventListener("mouseover", function( event ){
     for( let i=0; i<items.length; i++){
@@ -13,7 +13,7 @@ addEventListener("mouseover", function( event ){
             event.target.children[0].textContent = event.target.id;
             items[items[i][1]][0].children[0].textContent = "Wins!"
             items[items[i][2]][0].children[0].textContent = "Loose.."
-            targets[0].textContent = event.target.id;
+            targets[1].textContent = event.target.id.toUpperCase();
             targets[1].style.backgroundImage = items[i][3];
             console.log( targets[1].backgroundImage )
         }
