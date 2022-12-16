@@ -1,5 +1,5 @@
 * {
-    border: 1px solid black;
+    border: 0px solid black;
     box-sizing: border-box;
 }
 html { 
@@ -16,58 +16,143 @@ body {
     flex-direction: column;
 }
 header{
-    width: 100%;
+    z-index: 3;
+    width: 60vw;
     height: 20%;
 
-    flex-grow: 1;
-}
+    border-top-left-radius: 20px ;
+    border-top-right-radius: 20px ;
+    border-left: 2.2vw solid rgb(180, 169, 161);
+    border-right: 2.2vw solid rgb(180, 169, 161);
 
-h1 {
-    width: 100%;
-    height: 100%;
+    position: relative;
+    top: 0.3vh;
 
-    margin-top: 0px;
+    background-color: rgba(77, 139, 221, 0.836);
 
-    text-align: center;
-    font-size: 4vw;
-}
+    display: flex;
+    justify-content: center;}
+    h1 {
+        z-index: 3;
+        width: 42%;
+        height: 70%;
+
+        margin-top: 0px;
+        border-radius: 50%;
+        border-bottom: 5px solid rgb(74, 118, 155);
+        border-left: 3px solid rgb(72, 126, 170);
+        border-right: 3px solid grey;
+
+        text-align: center;
+        font-size: 4vw;
+        font-family:Impact, 'Arial Narrow Bold', sans-serif}
 
 section{
-    width: 100%;
+    width: 60vw;
     height: 80%;
 
-    flex-grow: 1;}
-
+    background-color: rgb(180, 169, 161);}
     #front, #back {
-        width: 100%;
+        width: 55.6vw;
         height: 100%;
 
-        position: relative;
-    }
-    #front {
-        z-index: 2;
-        background-color: rgba(255, 0, 0, 0.411); }
-    #back {
-        z-index: 1;
-        top: -100%;
-        background-color: rgba(0, 0, 255, 0);}
+        margin:auto;
+
+        border-radius: 5px;
+        border: 1px solid rgb(139, 139, 139);
+        border-left: 2px solid rgb(123, 123, 151);
+        border-right: 2px solid rgb(123, 123, 151);
+
+        position: relative;}
+        #front {
+            z-index: 2;
+            background-color: rgba(214, 214, 214, 0.5);
+            backdrop-filter: blur(0.7px); }
+        #back {
+            z-index: 1;
+            bottom: 100%;
+
+            font-size: 3em;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(65, 126, 206);
+            text-shadow: 10px 2px 6px black;
+
+            background-color: rgb(255, 255, 255);
+            background-position:left;
+            background-repeat: no-repeat;
+            background-size: 30%;
+            
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;}
+            #score {
+                width: 100%;
+
+                border: 1px solid black;
+
+                background-color: aquamarine;
+            
+                flex-grow: 1;
+                display: flex;
+                justify-content: space-between;}
+                #player, #comp {
+                    background-color: bisque;
+                    flex-grow: 1;
+                }
+                #result {
+                    flex-grow: 4;
+                }
+            #screen {
+                width: 100%;
+
+                border: 1px solid black;
+
+                background-color: rgb(255, 255, 255);
+                background-position:left;
+                background-repeat: no-repeat;
+                background-size: 30%;
+            
+                flex-grow: 4;}
 
 footer{
-    z-index: 2;
+    z-index: 1;
     width: 100%;
-    height: 20%;
-
-    flex-grow: 1;}
+    height: 11vh;}
     #hands {
         width: 100%;
-        height: 80%;
+        height: 16vh;
+
+        border-bottom: 0.1vh solid rgb(212, 196, 174);
+        border-left: 2.2vh solid rgb(180, 169, 161);
+        border-right: 2.2vh solid rgb(180, 169, 161);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+        background-color: rgb(212, 187, 154);
+        /* backdrop-filter: blur(1.9px); */
+
         display: flex;
         justify-content: space-evenly;}
         #rock, #paper, #scissor {
             width: 20%;
-            height: 200%;
+            height: 12vh;
+
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-left: 3px solid rgba(128, 128, 128, 0.082);
+            border-right: 3px solid rgba(128, 128, 128, 0.301);
 
             position: relative;
-            bottom: 150%;
+            bottom: -1vh;
             
-            background-color: bisque;}
+            background-image: linear-gradient(to right,rgba(194, 198, 206, 0.205), rgba(163, 168, 177, 0.185),rgba(207, 207, 207, 0.336));
+            backdrop-filter: blur(3px);}
+            /* backdrop-filter: blur(4px);} */
+            #sub {
+                z-index: -1;
+                position: relative;
+                top: -5%;
+
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: 20px;
+            }
