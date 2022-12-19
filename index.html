@@ -11,34 +11,40 @@
 <body>
 
     <header>
-        <h1>ROCK PAPER SCISSOR</h1>
+        <h1>ROCK PAPER<br>SCISSOR</h1>
     </header>
-    <section>
-        <div id="front">
-            <div id="msg">WELCOME!<br>To play simply press the <br>hand of your choice.<br><br>GOOD LUCK!</div>
-        </div>
-        <div id="back">
+    
+    <main>
+
+        <section id="front">
+            <p id="msg">WELCOME!<br><br>To play simply press the <br>hand of your choice.<br>GOOD LUCK!</p>
+        </section>
+
+        <section id="back">
             <div id="score">
                 <div id="player">
-                    <div id="name">Player</div>
-                    <div id="pointP">0</div>
+                    <h2 id="name">Player</h2>
+                    <p id="pointP">1</p>
                 </div>
                 <div id="round">
-                    Round
-                    <div id="pointR">0</div>
+                    <h2>Round</h2>
+                    <p id="pointR">2</p>
                 </div>
                 <div id="comp">
-                    <div id="name">Comp</div>
-                    <div id="pointC">0</div>
+                    <h2 id="name">Comp</h2>
+                    <p id="pointC">3</p>
                 </div>
             </div>
             <div id="screen">
                 <div id="left"></div>
                 <div id="right"></div>
             </div>
-        </div>
-    </section>
-    <footer>
+        </section>
+
+    </main>
+    
+    <nav>
+
         <div id="hands">
             <div id="res">RESET SCORE</div>
             <div id="rock"><div id="sub"></div></div>
@@ -46,7 +52,10 @@
             <div id="scissor"><div id="sub"></div></div>
             <div id="start">PLAY AGAIN</div>
         </div>
-    </footer>
+
+    </nav>
+
+    <footer></footer>
     
     <script src="script.js"></script>
 </body>
