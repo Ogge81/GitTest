@@ -12,24 +12,23 @@ let text = document.getElementById( "msg" )
 
 function over_button( event ){
     if( event.target.id === "rock" ){
-        document.getElementById("right").position = "absolute"
-        document.getElementById("right").display = "none"
-        document.getElementById("right").left = "100%";
-        text.style.fontSize = "20px"
+        text.style.fontSize = "3vh"
         text.style.height = "20%"
+        text.style.width = "100%"
         text.textContent = "Beats scissor. " + "Beaten by paper."
         targets[0].style.backgroundImage = "url(rock.png)"
         targets[0].textContent = "ROCK"}
     if( event.target.id === "paper" ){
-        text.style.fontSize = "20px"
+        text.style.fontSize = "3vh"
         text.style.height = "20%"
         text.style.width = "100%"
         text.textContent = "Beats rock     " + "Beaten by scissor"
         targets[0].style.backgroundImage = "url(paper.png)"
         targets[0].textContent = "PAPER"}
     if( event.target.id === "scissor" ){
-        text.style.fontSize = "20px"
+        text.style.fontSize = "3vh"
         text.style.height = "20%"
+        text.style.width = "100%"
         text.textContent = "Beats paper     " + "Beaten by rock"
         targets[0].style.backgroundImage = "url(scissor.png)"
         targets[0].textContent = "SCISSOR"}}
@@ -37,19 +36,18 @@ function over_button( event ){
 function check_winner( event, computerHand ){
     document.getElementById("pointR").textContent = String(Number(document.getElementById("pointR").textContent)+1)
     if( event.target === computerHand[0] ){
-        text.style.fontSize = "35px"
+        text.style.fontSize = "4vh"
         text.textContent = "ITS A TIE!"
-        console.log("Tie")
         targets[0].style.backgroundColor = "rgb(194, 192, 91)"
         targets[1].style.backgroundColor = "rgb(194, 192, 91)"}
     else if( event.target === items[computerHand[1]][0]){
-        text.style.fontSize = "35px"
+        text.style.fontSize = "4vh"
         text.textContent = "PLAYER LOOSE!"
         document.getElementById("pointC").textContent = String(Number(document.getElementById("pointC").textContent)+1)
         targets[0].style.backgroundColor = "rgb(209, 91, 85)"
         targets[1].style.backgroundColor = "rgb(144, 190, 146)"}
     else{
-        text.style.fontSize = "35px"
+        text.style.fontSize = "4vh"
         text.textContent = "PLAYER WINS!"
         document.getElementById("pointP").textContent = String(Number(document.getElementById("pointP").textContent)+1)
         targets[0].style.backgroundColor = "rgb(144, 190, 146)"
@@ -57,7 +55,7 @@ function check_winner( event, computerHand ){
 
 function click_button( event ){
     front.style.justifyContent = "center";
-    text.style.height = "20%"
+    // text.style.height = "30%"
     if( event.target.id === "rock" || event.target.id === "paper" || event.target.id === "scissor" ){
         document.getElementById("rock").style.visibility =  "hidden";
         document.getElementById("paper").style.visibility =  "hidden";
@@ -65,12 +63,9 @@ function click_button( event ){
         document.getElementById("res").style.visibility =  "visible";
         document.getElementById("start").style.visibility =  "visible";
         
-        
         let computerHand = items[ Math.floor(Math.random()*3) ]
         targets[1].textContent = computerHand[0].id.toUpperCase();
         targets[1].style.backgroundImage = computerHand[3];
-
-        console.log( computerHand, event.target )
 
         check_winner( event, computerHand )}
     else if ( event.target.id === "res" ){
