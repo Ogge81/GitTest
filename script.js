@@ -1,88 +1,88 @@
+let items2 = document.querySelectorAll(".item")
+console.log( items2 )
 let items = [
     [document.getElementById("rock"),2,1,"url(rock.png)"],
     [document.getElementById("paper"),0,2,"url(paper.png)"],
     [document.getElementById("scissor"),1,0,"url(scissor.png)"]]
 
-let targets = [
-    document.getElementById("left"),
-    document.getElementById("right")]
+let targets2 = document.querySelectorAll(".target")
+console.log( targets2 )
+// let targets = [
+//     document.getElementById("left"),
+//     document.getElementById("right")]
 
 let front = document.getElementById( "front" )
 let text = document.getElementById( "msg" )
 
 function over_button( event ){
+    if( event.target.parentNode.id === "hands" ){
+        targets2[0].style.fontSize = "3vh"
+        targets2[0].style.height = "20%"
+        targets2[0].style.width = "100%"
+        
+        if( event.target.id === "rock" || event.target.id === "paper" || event.target.id === "scissor" ){
+            targets2[4].style.backgroundImage = "url("+ event.target.id +".png)"
+            targets2[4].textContent = event.target.id.toUpperCase()
+        }
+    }
+
     if( event.target.id === "rock" ){
-        text.style.fontSize = "3vh"
-        text.style.height = "20%"
-        text.style.width = "100%"
-        text.textContent = "Beats scissor. " + "Beaten by paper."
-        targets[0].style.backgroundImage = "url(rock.png)"
-        targets[0].textContent = "ROCK"}
+        targets2[0].textContent = "Beats scissor. " + "Beaten by paper."
+    }
     if( event.target.id === "paper" ){
-        text.style.fontSize = "3vh"
-        text.style.height = "20%"
-        text.style.width = "100%"
-        text.textContent = "Beats rock     " + "Beaten by scissor"
-        targets[0].style.backgroundImage = "url(paper.png)"
-        targets[0].textContent = "PAPER"}
+        targets2[0].textContent = "Beats rock     " + "Beaten by scissor"
+    }
     if( event.target.id === "scissor" ){
-        text.style.fontSize = "3vh"
-        text.style.height = "20%"
-        text.style.width = "100%"
-        text.textContent = "Beats paper     " + "Beaten by rock"
-        targets[0].style.backgroundImage = "url(scissor.png)"
-        targets[0].textContent = "SCISSOR"}}
+        targets2[0].textContent = "Beats paper     " + "Beaten by rock"
+    }}
 
 function check_winner( event, computerHand ){
-    document.getElementById("pointR").textContent = String(Number(document.getElementById("pointR").textContent)+1)
     if( event.target === computerHand[0] ){
-        text.style.fontSize = "4vh"
-        text.textContent = "ITS A TIE!"
-        targets[0].style.backgroundColor = "rgb(194, 192, 91)"
-        targets[1].style.backgroundColor = "rgb(194, 192, 91)"}
+        targets2[0].style.fontSize = "5vh"
+        targets2[0].textContent = "ITS A TIE!"
+        targets2[4].style.backgroundColor = "rgb(194, 192, 91)"
+        targets2[5].style.backgroundColor = "rgb(194, 192, 91)"}
     else if( event.target === items[computerHand[1]][0]){
-        text.style.fontSize = "4vh"
-        text.textContent = "PLAYER LOOSE!"
-        document.getElementById("pointC").textContent = String(Number(document.getElementById("pointC").textContent)+1)
-        targets[0].style.backgroundColor = "rgb(209, 91, 85)"
-        targets[1].style.backgroundColor = "rgb(144, 190, 146)"}
+        targets2[0].style.fontSize = "5vh"
+        targets2[0].textContent = "PLAYER LOOSE!"
+        targets2[3].textContent = String(Number(document.getElementById("pointC").textContent)+1)
+        targets2[4].style.backgroundColor = "rgb(209, 91, 85)"
+        targets2[5].style.backgroundColor = "rgb(144, 190, 146)"}
     else{
-        text.style.fontSize = "4vh"
-        text.textContent = "PLAYER WINS!"
-        document.getElementById("pointP").textContent = String(Number(document.getElementById("pointP").textContent)+1)
-        targets[0].style.backgroundColor = "rgb(144, 190, 146)"
-        targets[1].style.backgroundColor = "rgb(209, 91, 85)"}}
+        targets2[0].style.fontSize = "5vh"
+        targets2[0].textContent = "PLAYER WINS!"
+        targets2[1].textContent = String(Number(document.getElementById("pointP").textContent)+1)
+        targets2[4].style.backgroundColor = "rgb(144, 190, 146)"
+        targets2[5].style.backgroundColor = "rgb(209, 91, 85)"}}
 
 function click_button( event ){
-    front.style.justifyContent = "center";
-    // text.style.height = "30%"
     if( event.target.id === "rock" || event.target.id === "paper" || event.target.id === "scissor" ){
-        document.getElementById("rock").style.visibility =  "hidden";
-        document.getElementById("paper").style.visibility =  "hidden";
-        document.getElementById("scissor").style.visibility =  "hidden";
-        document.getElementById("res").style.visibility =  "visible";
-        document.getElementById("start").style.visibility =  "visible";
+        for ( let i=0; i<items2.length; i++ ){
+            if( i===0 || i===4 ){
+                items2[i].style.visibility = "visible"
+            }else{ items2[i].style.visibility = "hidden"}}
         
         let computerHand = items[ Math.floor(Math.random()*3) ]
-        targets[1].textContent = computerHand[0].id.toUpperCase();
-        targets[1].style.backgroundImage = computerHand[3];
+        targets2[5].textContent = computerHand[0].id.toUpperCase();
+        targets2[5].style.backgroundImage = computerHand[3];
 
         check_winner( event, computerHand )}
     else if ( event.target.id === "res" ){
-        document.getElementById("pointR").textContent = 0
-        document.getElementById("pointP").textContent = 0
-        document.getElementById("pointC").textContent = 0}
+        targets2[1].textContent = 0
+        targets2[2].textContent = 1
+        targets2[3].textContent = 0}
     else if ( event.target.id === "start" ){
-        document.getElementById("msg").textContent = ""
-        for ( let i=0; i<targets.length; i++ ){
-            targets[i].textContent = "";
-            targets[i].style.backgroundImage = "none";
-            targets[i].style.backgroundColor = "white";}
-            document.getElementById("rock").style.visibility =  "visible";
-            document.getElementById("paper").style.visibility =  "visible";
-            document.getElementById("scissor").style.visibility =  "visible";
-            document.getElementById("res").style.visibility =  "hidden";
-            document.getElementById("start").style.visibility =  "hidden";
+        targets2[2].textContent = String(Number(targets2[2].textContent)+1)
+        targets2[0].textContent = ""
+        for ( let i=4; i<targets2.length; i++ ){
+            targets2[i].textContent = "";
+            targets2[i].style.backgroundImage = "none";
+            targets2[i].style.backgroundColor = "white";}
+
+            for ( let i=0; i<items2.length; i++ ){
+                if( i===0 || i===4 ){
+                    items2[i].style.visibility = "hidden"
+                }else{ items2[i].style.visibility = "visible"}}
     }
 
 }
