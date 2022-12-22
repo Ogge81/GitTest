@@ -10,10 +10,10 @@ body {
     max-width: 90%;
     max-height: 100%;
 
+    position: relative;
+
     margin: auto;
     margin-top: 4vh;
-
-    background-color: rgb(235, 235, 234);
 
     display: flex;
     flex-direction: column;
@@ -21,25 +21,24 @@ body {
 }
 
 header{
-    z-index: 3;
+    z-index: 2;
     width: 100%;
     height: 15%;
 
+    border-radius: 5px;
     border-top-left-radius: 20px ;
     border-top-right-radius: 20px ;
-    /* border-bottom: 0.1vh solid rgb(212, 196, 174); */
     border-left: 2.2vh solid rgb(90, 112, 141);
     border-right: 2.2vh solid rgb(103, 154, 202);
 
     position: relative;
-    top: 0.2vh;
+    top: 0.1vh;
 
     background-color: rgb(95, 139, 196);
 
     display: flex;
     justify-content: center;}
     h1 {
-        z-index: 3;
         width: 70%;
         height: 70%;
 
@@ -56,13 +55,18 @@ header{
         background-color: rgb(158, 138, 124);}
 
 main{
-    width: 90%;
+    z-index: 1;
+    width: 98%;
     height: 60%;
 
-    border-left: 2vh solid rgb(155, 155, 155);
-    border-right: 2vh solid rgb(206, 206, 206);
+    border-radius: 10px;
 
-    background-color: rgb(180, 169, 161);
+    border-top: 0.4vh solid rgb(50, 63, 107);
+    border-bottom: 0.4vh solid rgba(150, 150, 150, 0.459);
+    border-left: 0.4vh solid rgba(50, 63, 107, 0.603);
+    border-right: 0.4vh solid rgba(150, 150, 150, 0.459);
+
+    background-color: rgba(139, 139, 139, 0.699);
 }
     h2 {
         margin: 0;
@@ -94,42 +98,46 @@ main{
         margin:auto;
 
         position: relative;
-        /* bottom: 1%; */
 
-        border-radius: 5px;
-        border: 1px solid rgb(139, 139, 139);
-        border-left: 3px solid rgba(180, 180, 209, 0.644);
-        border-right: 3px solid rgb(123, 123, 151);}
+        border-radius: 8px;
+       
+    }
         #front {
             z-index: 2;
             width: 100%;
+            height: 100%;
+
+            position:relative;
             
             background-image: linear-gradient(to right,rgba(124, 130, 180, 0.6), rgba(0, 17, 255, 0.103), rgba(0, 47, 255, 0.212),rgba(0, 26, 255, 0.247),rgba(0, 17, 255, 0.185),rgba(124, 130, 180, 0.6));
             backdrop-filter: blur(0.7px);
         
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: flex-end;}
             p#msg {
-                width:70%;
+                z-index: -10;
+                width: 100%;
                 height: 70%;
+
+                position: relative;
 
                 padding: 5%;
 
                 text-align: center;
-                font-size: 3vh;
+                font-size: 4vh;
                 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                 
-                color:rgb(60, 124, 177);
+                color:rgba(72, 123, 189, 0.938);
                 background-color: rgba(151, 104, 33, 0);}
             
         #back {
             z-index: 1;
-            width: 98%;
+            width: 100%;
             height:100%;
-            bottom: 100%;
 
             position:relative;
+            bottom: 100%;
             /* bottom: 1%; */
 
             font-size: 35px;
@@ -198,19 +206,22 @@ main{
                 
 
 nav#hands{
-    z-index: 1;
+    z-index: 2;
     width: 100%;
     height: 15%;
+    bottom: 0.2vh;
 
-    border-bottom: 0.1vh solid rgb(212, 196, 174);
-    border-left: 2.2vh solid rgb(180, 169, 161);
-    border-right: 2.2vh solid rgb(180, 169, 161);
+    border-radius: 5px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 
+    border-bottom: 0.1vh solid rgb(212, 196, 174);
+    border-left: 2vh solid rgb(90, 112, 141);
+    border-right: 2vh solid rgb(103, 154, 202);
+
     position: relative;
 
-    background-color: rgb(212, 187, 154);
+    background-color: rgb(95, 139, 196);
 
     display: flex;
     justify-content: space-evenly;
@@ -225,13 +236,13 @@ nav#hands{
         border-right: 3px solid rgba(137, 157, 201, 0.692);
 
 
-        background-color: rgba(62, 109, 170, 0.4);
+        background-color: rgb(158, 138, 124);
         background-position:center;
         background-repeat: no-repeat;
         background-size: 60%;}
 
         button:hover {
-            background-color: rgba(62, 109, 170, 0.7);
+            background-color: rgba(158, 138, 124, 0.5);
         }
         
         #rock { background-image: url(rock.png); }
@@ -258,7 +269,7 @@ footer {
 
 @media only screen and (max-width:450px){
     h1 {
-        font-size: 30px;;}
+        font-size: 3vh;;}
     h2 {
         font-size: 2vh;}
     #score {
@@ -273,20 +284,22 @@ footer {
         width: 20vw;}}
 @media only screen and (max-height:769px) and (orientation: landscape) {
     body{
-        width: 90vw;
-        height: 110vh;
+        width: 70vw;
+        height: 100vh;
+
         
-        margin-top: 0px;}
+        margin-top: 5vh;}
         header{
             height: 15%;}
             h1{
-                width: 20%;
+                width: 40%;
+                margin-top:0%;
                 font-size: 2.5vw;}
         main{
             width: 90%;
             height: 65%;}
             #score {
-                height: 2%;}
+                height: 5%;}
                 #player, #round, #comp{
                     width: 10%;
                     display: flex;
@@ -299,7 +312,7 @@ footer {
                 }
             p#left, p#right{
                 font-size: 8vh;
-                background-size: 15vw;}
+                background-size: 40%;}
                 p#left{
                     padding-left: 4%;
                     text-align: left;}
